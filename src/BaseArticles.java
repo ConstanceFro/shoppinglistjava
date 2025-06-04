@@ -4,6 +4,7 @@ import java.util.Set;
 public class BaseArticles {
     private Set<String> articles = new HashSet<>();
 
+    //pour définir une liste d'articles initiale (sans compter ceux qu'on ajoute par la suite)
     public BaseArticles() {
         articles.add("patates");
         articles.add("haricots");
@@ -11,18 +12,17 @@ public class BaseArticles {
         articles.add("lait");
     }
 
+    //Pour vérifier que l'article qu'on essaie d'ajouter à la liste existe dans la base de données
     public boolean articleexistant(String nom) {
         return articles.contains(nom.toLowerCase());
     }
 
+    //pour ajouter l'article qui n'existe pas encore à la base de données
     public void ajouter(String nom) {
         articles.add(nom.toLowerCase());
     }
 
-    public Set<String> getTousLesArticles() {
-        return articles;
-    }
-    //nouvelle méthode pour pouvoir afficher le contenu de la base de données depuis le main
+    //pour afficher l'ensemble des articles présents dans la base de données depuis le main
     public void afficher() {
         if (articles.isEmpty()) {
             System.out.println("La base d'articles est vide.");
