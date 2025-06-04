@@ -9,7 +9,7 @@ public class ShoppingList {
     }
 
     public void afficher() {
-        System.out.println("📋 Votre liste de courses :");
+        System.out.println("Votre liste de courses :");
         for (Article a : liste) {
             System.out.println("- " + a);
         }

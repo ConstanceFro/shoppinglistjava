@@ -11,7 +11,7 @@ public class BaseArticles {
         articles.add("lait");
     }
 
-    public boolean existe(String nom) {
+    public boolean articleexistant(String nom) {
         return articles.contains(nom.toLowerCase());
     }
 
@@ -22,5 +22,15 @@ public class BaseArticles {
     public Set<String> getTousLesArticles() {
         return articles;
     }
+    //nouvelle méthode pour pouvoir afficher le contenu de la base de données depuis le main
+    public void afficher() {
+        if (articles.isEmpty()) {
+            System.out.println("La base d'articles est vide.");
+        } else {
+            System.out.println("Articles dans la base :");
+            for (String article : articles) {
+                System.out.println("- " + article);
+            }
+        }
+    }
 }
-
